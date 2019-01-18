@@ -1,24 +1,25 @@
 #t1{
-height: 100%;
-max-height: 100%
+  height: 100%;
+  max-height: 100%;
 
 }
 #div1{
-height: 100%;
+  height: 100%;
 }
 #div2{
-  width: 250px;
   font-size: 25px;
 }
 html, body {
-height: 100%;
-margin: 0;
+  height: 100%;
+  margin: 0;
 }
 body {
-background-color: rgb(204, 255, 255);
+  background-color: #ffff99;
 
 }
 td {
-  border: 5px red;
+
+  background-color: #f5e6ff;
+  width: 25%;
 
 }
