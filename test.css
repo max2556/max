@@ -29,6 +29,11 @@ html, body {
   height: 100%;
   background-color:  #cceeff;
 }
+.in3{
+  height: 100%;
+  width: 150px;
+  background-color:  #cceeff;
+}
 .trIn{
   height: 30px;
   max-height: 30px;
