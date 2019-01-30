@@ -17,6 +17,7 @@ function writing() {
 	newTr.className = "trIn";
 	globalData.txtOutTable.appendChild(newTr);
 	document.getElementById(newId).innerText = globalData.txtIn.value;
+	globalData.txtIn.value = "";
 	count = count + 1;
 }
 
