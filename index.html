@@ -3,63 +3,81 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="test.css"></link>
+		<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+		<script>
+		// Initialize Firebase
+			var config = {
+					apiKey: "AIzaSyC6hEUAYh7rAq_68yRg2tmb-e5AlK7-V_0",
+					authDomain: "mmaxhat.firebaseapp.com",
+					databaseURL: "https://mmaxhat.firebaseio.com",
+					projectId: "mmaxhat",
+					storageBucket: "mmaxhat.appspot.com",
+					messagingSenderId: "981715995494"
+				};
+				firebase.initializeApp(config);
+			var database = firebase.database();
+		</script>
 		<script src="chat.js"></script>
 	</head>
 	<body>
-
-	<div id="AIA">
-	<table class="table" style="width:100%;">
-		<tbody>
-
-
-			<tr id="tr1">
-				<td colspan="4">
-					<div class="tableTaker" style="overflow-x:scroll;border-style:solid; border-width:2px; border-color:#00ccff; border-radius:2px;position:;">
-						<table class="table" style="width:100%;">
-							<tr class="trIn">
-								<td><div class="in3">TestUser</div></td>
-							</tr>
-						</table>
-					</div>
-				</td>
-			</tr>
+		<div id="AIA">
+			<div id="AIB">
+				<table class="table" style="width:100%;">
+					<tbody>
 
 
+						<tr id="tr1">
+							<td colspan="4">
+								<div class="tableTaker" style="overflow-x:scroll;border-style:solid; border-width:2px; border-color:#00ccff; border-radius:2px;position:;">
+									<table class="table" style="width:100%;">
+										<tr class="trIn">
+											<td><div class="in3">TestUser</div></td>
+										</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
 
-			<tr id="tr2">
-				<td colspan="4" style="width:50%;">
-					<div class="tableTaker" style="overflow-y:scroll;border-style:solid; border-width:2px; border-color:#00ccff; border-radius:2px;">
-						<div>
-							<table class="table" style="width:100%;">
-								<tbody id="txtOutTable">
-									<tr class="trIn">  <td><div class="in2" id="txtTitle">Hello World! There is test message</div></td> </tr>
-								</tbody>
-							</table>
+
+
+						<tr id="tr2">
+							<td colspan="4" style="width:50%;">
+								<div class="tableTaker" style="overflow-y:scroll;border-style:solid; border-width:2px; border-color:#00ccff; border-radius:2px;">
+									<div>
+										<table class="table" style="width:100%;">
+											<tbody id="txtOutTable">
+												<tr class="trIn">  <td><div class="in2" id="txtTitle">Hello World! There is test message</div></td> </tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+			 			</td>
+					</tr>
+
+
+					<tr id="tr3">
+						<td colspan="4">
+							<div class="tableTaker">
+								<input id="txtIn" type="text" style="border-style:solid; border-width:2px; border-color:#00ccff; border-radius:2px; width:100%; height:100%;">
+							</input>
 						</div>
-					</div>
-			 	</td>
-			</tr>
+					</td>
+				</tr>
 
-
-			<tr id="tr3">
-				<td colspan="4">
-					<div class="tableTaker">
-						<input id="txtIn" type="text" style="border-style:solid; border-width:2px; border-color:#00ccff; border-radius:2px; width:100%; height:100%;">
-						</input>
-					</div>
-				</td>
-			</tr>
-
-			<tr class="tr4">
-				<td><div class="in1"/></td>
-				<td><div class="in1"/></td>
-				<td><div class="in1"/></td>
-				<td><div class="in1"/></td>
-			</tr>
-
-		</tbody>
-	</table>
-</div>
-
+					<tr class="tr4">
+						<td style="width:25%"><div class="in1" id="newUserCr">Новый пользователь</div></td>
+						<td style="width:25%"><div class="in1" id="loginAsUser">Существующий пользователь</div></td>
+						<td style="width:25%"><div class="in1" id="menu">Меню(будет когда-то)</div></td>
+						<td style="width:25%"><div class="in1" id="nothing">,,,,.....</div></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div id="regTaker" style="visibility:hidden;align:center;">
+				<input id="inputName" type="input" value="Name" />
+				<input id="inputPassword" type="input" value="Password" />
+				<input type="button" value="Создать"/>
+			</div>
+		</div>
 	</body>
 </html>

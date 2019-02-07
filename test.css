@@ -64,5 +64,13 @@ html, body {
 #AIA{
   width: 90%;
   height: 90%;
-  margin: 5%;
+  padding: 5%;
+}
+#AIB{
+  width: 100%;
+  height: 100%;
+}
+.regTaker{
+  visibility: hidden;
+  align-self: center;
 }
