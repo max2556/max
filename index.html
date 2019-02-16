@@ -26,7 +26,8 @@
 				signInSuccessUrl: '<url-to-redirect-to-on-success>',
 				signInOptions: [
 					// Leave the lines as is for the providers you want to offer your users.
-					firebase.auth.GoogleAuthProvider.PROVIDER_ID
+					firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+					firebase.auth.EmailAuthProvider.PROVIDER_ID
 				],
 				// tosUrl and privacyPolicyUrl accept either url string or a callback
 				// function.
@@ -47,7 +48,7 @@
 	</head>
 	<body>
 		<div id="AIA">
-			<div id="AIB">
+			<div id="AIB" style="display:none;">
 				<table class="table" style="width:100%;">
 					<tbody>
 
@@ -104,7 +105,7 @@
 				<input id="inputPassword" type="input" value="Password" />
 				<input type="button" value="Создать"/>
 			</div>
-			<div id="firebaseui-auth-container"></div>
+			<div id="firebaseui-auth-container" style="position: fixed; left:40%; z-index: 9999; display: block;"></div>
 		</div>
 	</body>
 </html>

@@ -2,6 +2,26 @@ var globalData = {};
 var database = firebase.database();
 var count = 1;
 var oldId;
+
+initApp = function() {
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+					// User is signed in.
+					var displayName = user.displayName;
+					var email = user.email;
+					var emailVerified = user.emailVerified;
+					var photoURL = user.photoURL;
+					var uid = user.uid;
+					var phoneNumber = user.phoneNumber;
+					var providerData = user.providerData;
+					globalData.AIB.style.display = block;
+					globalData.auth_container = none;
+					});
+				}
+		};
+}
+
+
 window.onload = function() {
 	load();
 	globalData.txtIn.onkeypress = keyCheck;
@@ -17,8 +37,10 @@ window.onload = function() {
 			messageLoad(currentMessage);
 		};
 	});
+window.addEventListener('load', function() {
+	initApp()
+});
 
-}
 function load() { //прогрузка
 	globalData.txtIn = document.getElementById("txtIn");
 	globalData.txtOutTable = document.getElementById("txtOutTable");
@@ -27,6 +49,8 @@ function load() { //прогрузка
 	globalData.regTaker = document.getElementById("regTaker");
 	globalData.inputName = document.getElementById("inputName");
 	globalData.inputPassword = document.getElementById("inputPassword");
+	globalData.AIB = document.getElementById("AIB");
+	globalData.auth_container = document.getElementById("firebaseui-auth-container");
 }
 function messageLoad(currentMessage) {
 	var newId = currentMessage.messageId;
