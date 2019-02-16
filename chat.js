@@ -21,9 +21,18 @@ window.onload = function() {
 	globalData.txtIn.onkeypress = keyCheck;
 	globalData.newUserCr.onclick = regPrepare;
 	var messageChange = firebase.database().ref('/messages/');
-	messageChange.on('value', function(read) {
+	messageChange.once('value', function(read) {
 		var changes = read.val();
 		count = changes.count;
+		var objKeys = Object.keys(changes);
+		for (var i = 0; i < objKeys.length-1; i++) {
+			var currentKey = objKeys[i];
+			var currentMessage = changes[currentKey];
+			messageLoad(currentMessage);
+		};
+	});
+	messageChange.on('child_added', function(read) {
+		var changes = read.val();
 		var objKeys = Object.keys(changes);
 		for (var i = 0; i < objKeys.length-1; i++) {
 			var currentKey = objKeys[i];
