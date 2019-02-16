@@ -59,6 +59,7 @@ initApp = function() {
 					};
 					document.getElementById("AIB").style.display = "block";
 					document.getElementById("firebaseui-auth-container").style.display = "none";
+					userCreate(user, uid);
 					return firebase.database().ref().update(updates);
 				}})};
 
@@ -72,6 +73,7 @@ function load() { //прогрузка
 	globalData.inputPassword = document.getElementById("inputPassword");
 	globalData.AIB = document.getElementById("AIB");
 	globalData.auth_container = document.getElementById("firebaseui-auth-container");
+	globalData.usersTable = document.getElementById("usersTable");
 }
 function messageLoad(currentMessage) {
 	var newId = currentMessage.messageId;
@@ -112,4 +114,25 @@ function regPrepare() {
 		globalData.newUserCr.innerText = "Новый пользователь";
 	}
 
+}
+function userCreate(user, uid) {
+	var alph = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+	var letterNubmer = null;
+	var colors = {};
+	var newTd = document.createElement("td");
+	var newName = user.displayName
+	newTd.innerHTML = "<div class='in2' id=" + uid + "></div>";
+	newTd.className = "trIn";
+  globalData.usersTable.appendChild(newTd);
+	document.getElementById(newId).innerText = newName;
+	for (var i = 0; i < 3; i++) {
+		var currentLetter = newName.charAt(i).toLowerCase();
+		for (var i = 0; i < alph.length; i++) {if (currentLetter == alph.charAt(i)) {letterNubmer = i;}}
+		letterNubmer = letterNubmer*8;
+		colors[i] = letterNubmer;
+	}
+	var red = colors.0;
+	var green = colors.1;
+	var blue = colors.2;
+	document.getElementById(newId).style.background-color = rgb(red,green,blue);
 }
