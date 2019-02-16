@@ -48,8 +48,11 @@
 								var uid = user.uid;
 								var phoneNumber = user.phoneNumber;
 								var providerData = user.providerData;
+								var updates = {};
+								updates['/users/' + uid] = user;
 								document.getElementById("AIB").style.display = "block";
 								document.getElementById("firebaseui-auth-container").style.display = "none";
+								return firebase.database().ref().update(updates);
 							}});
 			};
 			window.addEventListener('load', function() {
