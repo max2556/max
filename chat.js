@@ -20,7 +20,7 @@ window.onload = function() {
 			messageLoad(currentMessage);
 		};
 	});
-
+}
 
 function load() { //прогрузка
 	globalData.txtIn = document.getElementById("txtIn");
