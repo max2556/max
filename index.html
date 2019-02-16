@@ -46,10 +46,10 @@
 								var providerData = user.providerData;
 								var updates = {};
 								updates['/users/' + uid] = {
-									var displayName = user.displayName;
-									var email = user.email;
-									var emailVerified = user.emailVerified;
-									var photoURL = user.photoURL;
+									displayName: user.displayName;
+									email: user.email;
+									emailVerified: user.emailVerified;
+									photoURL: user.photoURL;
 								};
 								document.getElementById("AIB").style.display = "block";
 								document.getElementById("firebaseui-auth-container").style.display = "none";
