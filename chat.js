@@ -3,21 +3,6 @@ var database = firebase.database();
 var count = 1;
 var oldId;
 
-initApp = function() {
-			firebase.auth().onAuthStateChanged(function(user) {
-				if (user) {
-					// User is signed in.
-					var displayName = user.displayName;
-					var email = user.email;
-					var emailVerified = user.emailVerified;
-					var photoURL = user.photoURL;
-					var uid = user.uid;
-					var phoneNumber = user.phoneNumber;
-					var providerData = user.providerData;
-					globalData.AIB.style.display = block;
-					globalData.auth_container = none;
-					});
-}
 
 
 window.onload = function() {
@@ -35,9 +20,7 @@ window.onload = function() {
 			messageLoad(currentMessage);
 		};
 	});
-window.addEventListener('load', function() {
-	initApp()
-});
+
 
 function load() { //прогрузка
 	globalData.txtIn = document.getElementById("txtIn");

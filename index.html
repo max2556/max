@@ -23,7 +23,6 @@
 		<script type="text/javascript">
 			// FirebaseUI config.
 			var uiConfig = {
-				signInSuccessUrl: 'index.html',
 				signInOptions: [
 					// Leave the lines as is for the providers you want to offer your users.
 					firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -38,8 +37,24 @@
 					window.location.assign('<your-privacy-policy-url>');
 				}
 			};
-
-			// Initialize the FirebaseUI Widget using Firebase.
+			initApp = function() {
+						firebase.auth().onAuthStateChanged(function(user) {
+							if (user) {
+								// User is signed in.
+								var displayName = user.displayName;
+								var email = user.email;
+								var emailVerified = user.emailVerified;
+								var photoURL = user.photoURL;
+								var uid = user.uid;
+								var phoneNumber = user.phoneNumber;
+								var providerData = user.providerData;
+								document.getElementById("AIB").style.display = block;
+								document.getElementById("firebaseui-auth-container").style.display = none;
+								});
+			}
+			window.addEventListener('load', function() {
+				initApp()
+			});
 			var ui = new firebaseui.auth.AuthUI(firebase.auth());
 			// The start method will wait until the DOM is loaded.
 			ui.start('#firebaseui-auth-container', uiConfig);
