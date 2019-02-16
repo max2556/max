@@ -133,5 +133,5 @@ function userCreate(user, uid) {
 	var red = colors[0];
 	var green = colors[1];
 	var blue = colors[2];
-	document.getElementById(uid).style;
+	var test = document.getElementById(uid).style;
 }
