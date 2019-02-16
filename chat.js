@@ -130,8 +130,8 @@ function userCreate(user, uid) {
 		letterNubmer = letterNubmer*8;
 		colors[i] = letterNubmer;
 	}
-	var red = colors.0;
-	var green = colors.1;
-	var blue = colors.2;
+	var red = colors[0];
+	var green = colors[1];
+	var blue = colors.[2];
 	document.getElementById(newId).style.background-color = rgb(red,green,blue);
 }
