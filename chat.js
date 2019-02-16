@@ -124,11 +124,11 @@ function userCreate(user, uid) {
 	newTd.className = "trIn";
   globalData.usersTable.appendChild(newTd);
 	document.getElementById(uid).innerText = newName;
-	for (var i = 0; i < 3; i++) {
-		var currentLetter = newName.charAt(i).toLowerCase();
+	for (var p = 0; p < 3; p++) {
+		var currentLetter = newName.charAt(p).toLowerCase();
 		for (var i = 0; i < alph.length; i++) {if (currentLetter == alph.charAt(i)) {letterNubmer = i;}}
 		letterNubmer = letterNubmer*8;
-		colors[i] = letterNubmer;
+		colors[p] = letterNubmer;
 	}
 	var red = colors[0];
 	var green = colors[1];
