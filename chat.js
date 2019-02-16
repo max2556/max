@@ -33,11 +33,12 @@ window.onload = function() {
 	});
 	messageChange.on('child_added', function(read) {
 		var changes = read.val();
-		var objKeys = Object.keys(changes);
-		for (var i = 0; i < objKeys.length-1; i++) {
-			var currentKey = objKeys[i];
-			var currentMessage = changes[currentKey];
-			messageLoad(currentMessage);
+		var newId = changes.messageId;
+		var newTr = document.createElement("tr");
+		newTr.innerHTML = " <td><div class='in2' id=" + newId + "></div></td>";
+		newTr.className = "trIn";
+		globalData.txtOutTable.appendChild(newTr);
+		document.getElementById(newId).innerText =	changes.messageValue;
 		};
 	});
 }
