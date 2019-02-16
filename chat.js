@@ -17,8 +17,6 @@ initApp = function() {
 					globalData.AIB.style.display = block;
 					globalData.auth_container = none;
 					});
-				}
-		};
 }
 
 
