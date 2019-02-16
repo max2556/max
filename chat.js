@@ -2,11 +2,22 @@ var globalData = {};
 var database = firebase.database();
 var count = 1;
 var oldId;
-
-
+var uiConfig = {
+	signInOptions: [
+		firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+		firebase.auth.EmailAuthProvider.PROVIDER_ID
+	],
+	tosUrl: '<your-tos-url>',
+	privacyPolicyUrl: function() {
+		window.location.assign('<your-privacy-policy-url>');
+	}
+};
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+ui.start('#firebaseui-auth-container', uiConfig);
 
 window.onload = function() {
 	load();
+	initApp()
 	globalData.txtIn.onkeypress = keyCheck;
 	globalData.newUserCr.onclick = regPrepare;
 	var messageChange = firebase.database().ref('/messages/');
@@ -21,6 +32,25 @@ window.onload = function() {
 		};
 	});
 }
+
+initApp = function() {
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+					// User is signed in.
+					var uid = user.uid;
+					var phoneNumber = user.phoneNumber;
+					var providerData = user.providerData;
+					var updates = {};
+					updates['/users/' + uid] = {
+						displayName: user.displayName,
+						email: user.email,
+						emailVerified: user.emailVerified,
+						photoURL: user.photoURL
+					};
+					document.getElementById("AIB").style.display = "block";
+					document.getElementById("firebaseui-auth-container").style.display = "none";
+					return firebase.database().ref().update(updates);
+				}})};
 
 function load() { //прогрузка
 	globalData.txtIn = document.getElementById("txtIn");
