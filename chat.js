@@ -123,7 +123,7 @@ function userCreate(user, uid) {
 	newTd.innerHTML = "<div class='in2' id=" + uid + "></div>";
 	newTd.className = "trIn";
   globalData.usersTable.appendChild(newTd);
-	document.getElementById(newId).innerText = newName;
+	document.getElementById(uid).innerText = newName;
 	for (var i = 0; i < 3; i++) {
 		var currentLetter = newName.charAt(i).toLowerCase();
 		for (var i = 0; i < alph.length; i++) {if (currentLetter == alph.charAt(i)) {letterNubmer = i;}}
