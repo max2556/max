@@ -39,7 +39,6 @@ window.onload = function() {
 		newTr.className = "trIn";
 		globalData.txtOutTable.appendChild(newTr);
 		document.getElementById(newId).innerText =	changes.messageValue;
-		};
 	});
 }
 
