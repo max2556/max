@@ -133,5 +133,5 @@ function userCreate(user, uid) {
 	var red = colors[0];
 	var green = colors[1];
 	var blue = colors[2];
-	document.getElementById(uid).style.backgroundColor ="rgb(red,green,blue)";
+	document.getElementById(uid).style.backgroundColor = "rgb(" + red + "," + green + "," + blue +")";
 }
